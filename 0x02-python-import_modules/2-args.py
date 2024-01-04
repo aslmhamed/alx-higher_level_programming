@@ -3,7 +3,7 @@
 if __name__ == "__main__":
     import sys
 
-    argument = len(sys.argv) -1 # -1 for the file name
+    argument = len(sys.argv) - 1 #  -1 for the file name
     if argument == 0:
         print("0 arguments.")
     elif argument == 1:
@@ -12,4 +12,3 @@ if __name__ == "__main__":
         print("{} arguments:".format(argument))
     for i in range(argument):
         print("{}: {}".format(i + 1, sys.argv[i + 1]))
-
