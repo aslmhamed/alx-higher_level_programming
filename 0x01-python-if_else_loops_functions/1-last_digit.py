@@ -3,7 +3,9 @@ import random
 number = random.randint(-10000, 10000)
 
 # Get the last digit of the number
-last_digit = abs(number) % 10
+num_str = str(number)
+
+last_digit = num_str[-1]
 
 if number < 0:
     last_digit = "-" + last_digit
