@@ -2,7 +2,8 @@
 
 def element_at(my_list, idx):
     idx = my_list[idx]
-    if (idx < 0) and (idx > my_list):
-        print("None")
+    if (idx < 0) or (idx > my_list):
+        return None
     else:
         return idx
+
