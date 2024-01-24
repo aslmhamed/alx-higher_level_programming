@@ -1,19 +1,19 @@
 #!/usr/bin/python3
 
 """
-Create A class named Square
-that defines a private instance attribute of: size, position.
-And a public instance method def area(self):
-that return the calculated area of the square
-Method getters and setter properties for size
-property def size(self): to retireve the size of the square
+class Square that defines a square
+Private instance attribute: size
+property def size(self): to retrieve it
 property setter def size(self, value): to set it:
-Method getters and setters properties for position
+
+Private instance attribute: position
+which takes tuple.
 property def position(self): to retrieve it
-property setter def position(self, value): to set it
-Public instance method: def my_print(self):
-prints the square using #
-and prints the position using spaces
+property setter def position(self, value): to set it:
+
+And a Public instance method: def area(self):
+that returns the current square area
+Method my_print prints the square using "#".
 """
 
 
@@ -22,6 +22,7 @@ class Square:
     defines class of square with optional size = zero
     initializing the variable self with size
     raise type and value errors if conditions not met
+    prints the square using '#'
     """
 
     def __init__(self, size=0, position=(0, 0)):
@@ -36,7 +37,14 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """Setter method for size"""
+        """size setter  method that sets the size of square.
+        Args:
+            value (int): size of Square
+        Raises:
+            TypeError: If `value` is not an integer.
+            ValueError: If `value` is less than 0.
+
+        """
         #  Check it is type integer
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
@@ -53,15 +61,13 @@ class Square:
 
     @position.setter
     def position(self, value):
-        """Setter method for position
+        """position setter method that sets position of Square.
         Args:
-            value (tuple): tuple of 2 positive integers
+            value (tuple): tuple of two positive integer coordinates
         Raises:
-              TypeError: if value is not a tuple of two
-                            positive integers
+            TypeError: If `value` is not a tuple of two positive integers
 
         """
-
         if (not isinstance(value, tuple) or len(value) != 2
                 or not all(isinstance(num, int) for num in value)
                 or not all(num >= 0 for num in value)):
@@ -81,6 +87,7 @@ class Square:
         """
         if self.__size == 0:
             print()
+            return
         else:
             for i in range(self.__position[1]):
                 print()
